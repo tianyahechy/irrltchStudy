@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gui impl">
+      <UniqueIdentifier>{70c8a859-982d-4a7f-a81b-300349914718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="io impl">
+      <UniqueIdentifier>{3d9e76c2-5d44-4d32-969b-ad8584f405d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="other impl">
+      <UniqueIdentifier>{c38f6d28-00d0-4c71-aab6-eff80026664d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene impl">
+      <UniqueIdentifier>{9291be5c-f054-4d27-bfd8-0357ba3bf817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video impl">
+      <UniqueIdentifier>{3e214fe8-9fce-48c8-8eef-f4ebcf595b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core">
+      <UniqueIdentifier>{ac1c89cf-9af8-4952-bab7-9171d3303a2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\gui">
+      <UniqueIdentifier>{8613d139-b5c8-4d30-9405-bf1f78e43f32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\io">
+      <UniqueIdentifier>{a6ea1903-dff9-48a6-ae8d-a77974c5d51b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\scene">
+      <UniqueIdentifier>{00a98944-60af-485c-bf03-fe10c17be88f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\video">
+      <UniqueIdentifier>{161bf4b6-5867-46de-8878-1e5f5aa21a17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\core\irrmath.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="irrtypes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="irrlicht.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EDriverTypes.h">
+      <Filter>头文件\video</Filter>
+    </ClInclude>
+    <ClInclude Include="dimension2d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="position2d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="IEventReceiver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IUnknown.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="keycodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="line3d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="line2d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="plane3d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="plane3dex.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="aabbox3d.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="array.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="heapsort.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="irrstring.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="rect.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="list.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
