@@ -108,5 +108,67 @@
     <ClInclude Include="list.h">
       <Filter>头文件\core</Filter>
     </ClInclude>
+    <ClInclude Include="matrix4.h">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="IFileList.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IFileSystem.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IReadFile.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileList.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="CReadFile.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="CZipReader.h">
+      <Filter>头文件\io</Filter>
+    </ClInclude>
+    <ClInclude Include="os.h">
+      <Filter>other impl</Filter>
+    </ClInclude>
+    <ClInclude Include="fast_atof.h">
+      <Filter>other impl</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileSystem.h">
+      <Filter>io impl</Filter>
+    </ClInclude>
+    <ClInclude Include="CLimitReadFile.h">
+      <Filter>io impl</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryReadFile.h">
+      <Filter>io impl</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>头文件\video</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CFileList.cpp">
+      <Filter>头文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="CReadFile.cpp">
+      <Filter>头文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="CZipReader.cpp">
+      <Filter>头文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="os.cpp">
+      <Filter>other impl</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileSystem.cpp">
+      <Filter>io impl</Filter>
+    </ClCompile>
+    <ClCompile Include="CLimitReadFile.cpp">
+      <Filter>io impl</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemoryReadFile.cpp">
+      <Filter>io impl</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

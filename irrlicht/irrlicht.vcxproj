@@ -103,6 +103,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\install\zlib-1.2.11\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -148,11 +149,22 @@
   <ItemGroup>
     <ClInclude Include="aabbox3d.h" />
     <ClInclude Include="array.h" />
+    <ClInclude Include="CFileList.h" />
+    <ClInclude Include="CFileSystem.h" />
+    <ClInclude Include="CLimitReadFile.h" />
+    <ClInclude Include="CMemoryReadFile.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="CReadFile.h" />
+    <ClInclude Include="CZipReader.h" />
     <ClInclude Include="dimension2d.h" />
     <ClInclude Include="EDriverTypes.h" />
+    <ClInclude Include="fast_atof.h" />
     <ClInclude Include="heapsort.h" />
     <ClInclude Include="IEventReceiver.h" />
+    <ClInclude Include="IFileList.h" />
+    <ClInclude Include="IFileSystem.h" />
     <ClInclude Include="include\core\irrmath.h" />
+    <ClInclude Include="IReadFile.h" />
     <ClInclude Include="irrlicht.h" />
     <ClInclude Include="irrstring.h" />
     <ClInclude Include="irrtypes.h" />
@@ -161,12 +173,23 @@
     <ClInclude Include="line2d.h" />
     <ClInclude Include="line3d.h" />
     <ClInclude Include="list.h" />
+    <ClInclude Include="matrix4.h" />
+    <ClInclude Include="os.h" />
     <ClInclude Include="plane3d.h" />
     <ClInclude Include="plane3dex.h" />
     <ClInclude Include="position2d.h" />
     <ClInclude Include="rect.h" />
     <ClInclude Include="vector2d.h" />
     <ClInclude Include="vector3d.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CFileList.cpp" />
+    <ClCompile Include="CFileSystem.cpp" />
+    <ClCompile Include="CLimitReadFile.cpp" />
+    <ClCompile Include="CMemoryReadFile.cpp" />
+    <ClCompile Include="CReadFile.cpp" />
+    <ClCompile Include="CZipReader.cpp" />
+    <ClCompile Include="os.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
