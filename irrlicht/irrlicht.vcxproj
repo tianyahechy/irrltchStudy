@@ -168,6 +168,7 @@
     <ClInclude Include="irrlicht.h" />
     <ClInclude Include="irrstring.h" />
     <ClInclude Include="irrtypes.h" />
+    <ClInclude Include="ITexture.h" />
     <ClInclude Include="IUnknown.h" />
     <ClInclude Include="keycodes.h" />
     <ClInclude Include="line2d.h" />
@@ -179,6 +180,7 @@
     <ClInclude Include="plane3dex.h" />
     <ClInclude Include="position2d.h" />
     <ClInclude Include="rect.h" />
+    <ClInclude Include="S3DVertex.h" />
     <ClInclude Include="vector2d.h" />
     <ClInclude Include="vector3d.h" />
   </ItemGroup>
