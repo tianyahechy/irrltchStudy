@@ -2,7 +2,7 @@
 //ÒÑÍê³É
 #pragma once
 
-#include "../../irrtypes.h"
+#include "irrtypes.h"
 
 namespace irr
 {
@@ -122,7 +122,10 @@ namespace irr
 			{
 				return Iterator(root);
 			}
-
+			Iterator end() const
+			{
+				return Iterator(0);
+			}
 			Iterator getLast() const
 			{
 				return Iterator(last);

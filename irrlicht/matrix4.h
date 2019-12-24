@@ -26,6 +26,7 @@ namespace irr
 			void setTranslation(const vector3df& translation);
 			void setInverseTranslation(const vector3df& translation);
 			void setScale(const vector3df& scale);
+			void setRotationDegrees(const vector3df& rotation);
 			void setRotationRadians(const vector3df& rotation);
 			void setInverseRotationRadians(const vector3df& rotation);
 			void makeIdentity();
@@ -194,6 +195,10 @@ namespace irr
 			_m[10] = (f32)(cr * cp);
 		}
 
+		inline void matrix4::setRotationDegrees(const vector3df& rotation)
+		{
+			setRotationRadians(rotation * (f32) 3.1415926 / 180.0);
+		}
 		void matrix4::setInverseRotationRadians(const vector3df& rotation)
 		{
 			f64 cr = cos(rotation.X);

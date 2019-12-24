@@ -10,6 +10,7 @@ namespace irr
 		template <class T>
 		class aabbox3d
 		{
+		public:
 			vector3d<T> _minEdge;
 			vector3d<T> _maxEdge;
 
