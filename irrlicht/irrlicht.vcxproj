@@ -161,6 +161,7 @@
     <ClInclude Include="fast_atof.h" />
     <ClInclude Include="heapsort.h" />
     <ClInclude Include="IAnimatedMesh.h" />
+    <ClInclude Include="IAnimatedMeshSceneNode.h" />
     <ClInclude Include="IEventReceiver.h" />
     <ClInclude Include="IFileList.h" />
     <ClInclude Include="IFileSystem.h" />
