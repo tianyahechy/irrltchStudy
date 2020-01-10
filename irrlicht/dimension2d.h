@@ -9,6 +9,7 @@ namespace irr
 		template <class T>
 		class dimension2d
 		{
+		public:
 			T _width, _height;
 		public:
 			dimension2d()

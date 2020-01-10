@@ -155,6 +155,7 @@
     <ClInclude Include="CMemoryReadFile.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="CReadFile.h" />
+    <ClInclude Include="CSurface.h" />
     <ClInclude Include="CZipReader.h" />
     <ClInclude Include="dimension2d.h" />
     <ClInclude Include="EDriverTypes.h" />
@@ -180,6 +181,9 @@
     <ClInclude Include="ISceneManager.h" />
     <ClInclude Include="ISceneNode.h" />
     <ClInclude Include="ISceneNodeAnimator.h" />
+    <ClInclude Include="ISurface.h" />
+    <ClInclude Include="ISurfaceLoader.h" />
+    <ClInclude Include="ISurfacePresenter.h" />
     <ClInclude Include="ITexture.h" />
     <ClInclude Include="IUnknown.h" />
     <ClInclude Include="IVideoDriver.h" />
@@ -208,6 +212,7 @@
     <ClCompile Include="CLimitReadFile.cpp" />
     <ClCompile Include="CMemoryReadFile.cpp" />
     <ClCompile Include="CReadFile.cpp" />
+    <ClCompile Include="CSurface.cpp" />
     <ClCompile Include="CZipReader.cpp" />
     <ClCompile Include="os.cpp" />
   </ItemGroup>
