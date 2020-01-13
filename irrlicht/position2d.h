@@ -8,8 +8,8 @@ namespace irr
 		template <class T>
 		class position2d
 		{
-			T _x, _y;
 		public:
+			T _x, _y;
 			position2d(T x, T y)
 			{
 				_x = x;
