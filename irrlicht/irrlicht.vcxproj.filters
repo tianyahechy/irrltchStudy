@@ -225,6 +225,9 @@
     <ClInclude Include="CFPSCounter.h">
       <Filter>video impl\Null</Filter>
     </ClInclude>
+    <ClInclude Include="CColorConverter.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFileList.cpp">
@@ -252,6 +255,9 @@
       <Filter>video impl\Null</Filter>
     </ClCompile>
     <ClCompile Include="CFPSCounter.cpp">
+      <Filter>video impl\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="CColorConverter.cpp">
       <Filter>video impl\Null</Filter>
     </ClCompile>
   </ItemGroup>

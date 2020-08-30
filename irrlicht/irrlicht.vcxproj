@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="aabbox3d.h" />
     <ClInclude Include="array.h" />
+    <ClInclude Include="CColorConverter.h" />
     <ClInclude Include="CFileList.h" />
     <ClInclude Include="CFileSystem.h" />
     <ClInclude Include="CFPSCounter.h" />
@@ -208,6 +209,7 @@
     <ClInclude Include="vector3d.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CColorConverter.cpp" />
     <ClCompile Include="CFileList.cpp" />
     <ClCompile Include="CFileSystem.cpp" />
     <ClCompile Include="CFPSCounter.cpp" />
