@@ -43,6 +43,9 @@
     <Filter Include="头文件\video">
       <UniqueIdentifier>{161bf4b6-5867-46de-8878-1e5f5aa21a17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="video impl\Null">
+      <UniqueIdentifier>{cfd41c50-1cdd-4d61-b122-4cfd088133a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\core\irrmath.h">
@@ -147,6 +150,81 @@
     <ClInclude Include="color.h">
       <Filter>头文件\video</Filter>
     </ClInclude>
+    <ClInclude Include="IAnimatedMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImeshBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IQ3LevelMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ISceneNodeAnimator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ITexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IVideoDriver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="S3DVertex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="slight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMeshBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SMeshBufferLightMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ISceneNode.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ISceneManager.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="IAnimatedMeshSceneNode.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="IBillboardSceneNode.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="IBspTreeSceneNode.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ICameraSceneNode.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ILightSceneNode.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ISurface.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="ISurfaceLoader.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="ISurfacePresenter.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="CSurface.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="CFPSCounter.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFileList.cpp">
@@ -169,6 +247,12 @@
     </ClCompile>
     <ClCompile Include="CMemoryReadFile.cpp">
       <Filter>io impl</Filter>
+    </ClCompile>
+    <ClCompile Include="CSurface.cpp">
+      <Filter>video impl\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="CFPSCounter.cpp">
+      <Filter>video impl\Null</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

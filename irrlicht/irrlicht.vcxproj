@@ -151,6 +151,7 @@
     <ClInclude Include="array.h" />
     <ClInclude Include="CFileList.h" />
     <ClInclude Include="CFileSystem.h" />
+    <ClInclude Include="CFPSCounter.h" />
     <ClInclude Include="CLimitReadFile.h" />
     <ClInclude Include="CMemoryReadFile.h" />
     <ClInclude Include="color.h" />
@@ -209,6 +210,7 @@
   <ItemGroup>
     <ClCompile Include="CFileList.cpp" />
     <ClCompile Include="CFileSystem.cpp" />
+    <ClCompile Include="CFPSCounter.cpp" />
     <ClCompile Include="CLimitReadFile.cpp" />
     <ClCompile Include="CMemoryReadFile.cpp" />
     <ClCompile Include="CReadFile.cpp" />
