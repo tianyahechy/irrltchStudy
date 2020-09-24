@@ -159,6 +159,7 @@
     <ClInclude Include="CReadFile.h" />
     <ClInclude Include="CSurface.h" />
     <ClInclude Include="CSurfaceLoaderBmp.h" />
+    <ClInclude Include="CSurfaceLoaderJPG.h" />
     <ClInclude Include="CZipReader.h" />
     <ClInclude Include="dimension2d.h" />
     <ClInclude Include="EDriverTypes.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="CReadFile.cpp" />
     <ClCompile Include="CSurface.cpp" />
     <ClCompile Include="CSurfaceLoaderBmp.cpp" />
+    <ClCompile Include="CSurfaceLoaderJPG.cpp" />
     <ClCompile Include="CZipReader.cpp" />
     <ClCompile Include="os.cpp" />
   </ItemGroup>
