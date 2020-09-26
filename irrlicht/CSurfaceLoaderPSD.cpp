@@ -196,7 +196,7 @@ namespace irr
 						++bytesRead;
 						if (rh >= 0)
 						{
-							++rh;
+							++rh;`
 							while (rh--)
 							{
 								*dest = *pBuf++;
