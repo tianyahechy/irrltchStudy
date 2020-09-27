@@ -237,6 +237,9 @@
     <ClInclude Include="CSurfaceLoaderPSD.h">
       <Filter>video impl\Null</Filter>
     </ClInclude>
+    <ClInclude Include="CSurfaceLoaderTGA.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFileList.cpp">
@@ -276,6 +279,9 @@
       <Filter>video impl\Null</Filter>
     </ClCompile>
     <ClCompile Include="CSurfaceLoaderPSD.cpp">
+      <Filter>video impl\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="CSurfaceLoaderTGA.cpp">
       <Filter>video impl\Null</Filter>
     </ClCompile>
   </ItemGroup>

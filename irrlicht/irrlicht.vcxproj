@@ -161,6 +161,7 @@
     <ClInclude Include="CSurfaceLoaderBmp.h" />
     <ClInclude Include="CSurfaceLoaderJPG.h" />
     <ClInclude Include="CSurfaceLoaderPSD.h" />
+    <ClInclude Include="CSurfaceLoaderTGA.h" />
     <ClInclude Include="CZipReader.h" />
     <ClInclude Include="dimension2d.h" />
     <ClInclude Include="EDriverTypes.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="CSurfaceLoaderBmp.cpp" />
     <ClCompile Include="CSurfaceLoaderJPG.cpp" />
     <ClCompile Include="CSurfaceLoaderPSD.cpp" />
+    <ClCompile Include="CSurfaceLoaderTGA.cpp" />
     <ClCompile Include="CZipReader.cpp" />
     <ClCompile Include="os.cpp" />
   </ItemGroup>
