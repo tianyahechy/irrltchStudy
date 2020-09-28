@@ -30,10 +30,10 @@ namespace irr
 			TS_COUNT
 		};
 		
-		class IVideoDirver : public IUnkown
+		class IVideoDriver : public IUnkown
 		{
 		public:
-			virtual ~IVideoDirver() {}
+			virtual ~IVideoDriver() {}
 			virtual bool beginScene(bool backBuffer, bool zBuffer, Color color) = 0;
 			virtual bool endScene() = 0;
 			virtual bool queryFeature(EK3D_VIDEO_DRIVER_FEATRUE feature) = 0;

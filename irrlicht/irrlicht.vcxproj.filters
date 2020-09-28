@@ -240,6 +240,12 @@
     <ClInclude Include="CSurfaceLoaderTGA.h">
       <Filter>video impl\Null</Filter>
     </ClInclude>
+    <ClInclude Include="CVideoNull.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoftWareTexture.h">
+      <Filter>video impl\Null</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFileList.cpp">
@@ -282,6 +288,12 @@
       <Filter>video impl\Null</Filter>
     </ClCompile>
     <ClCompile Include="CSurfaceLoaderTGA.cpp">
+      <Filter>video impl\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="CVideoNull.cpp">
+      <Filter>video impl\Null</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoftwareTexture.cpp">
       <Filter>video impl\Null</Filter>
     </ClCompile>
   </ItemGroup>

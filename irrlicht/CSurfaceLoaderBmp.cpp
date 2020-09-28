@@ -287,9 +287,24 @@ namespace irr
 				CColorConverter::convert24BitTo16BitFlipMirror(BmpData, surface->lock(), header.Width, header.Height, pitch, PaletteData);
 				surface->unlock();
 				break;
+
+			case 32:
+				break;
+
 			default:
 				break;
 			}
+			delete[] PaletteData;
+			PaletteData = 0;
+
+			delete[] BmpData;
+			BmpData = 0;
+			return surface;
+		}
+
+		ISurfaceLoader* createSurfaceloaderBMP()
+		{
+			return new CSurfaceLoaderBmp;
 		}
 	}
 }
