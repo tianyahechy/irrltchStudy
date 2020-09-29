@@ -164,6 +164,7 @@
     <ClInclude Include="CSurfaceLoaderPSD.h" />
     <ClInclude Include="CSurfaceLoaderTGA.h" />
     <ClInclude Include="CVideoNull.h" />
+    <ClInclude Include="CZBuffer.h" />
     <ClInclude Include="CZipReader.h" />
     <ClInclude Include="dimension2d.h" />
     <ClInclude Include="EDriverTypes.h" />
@@ -195,6 +196,7 @@
     <ClInclude Include="ITexture.h" />
     <ClInclude Include="IUnknown.h" />
     <ClInclude Include="IVideoDriver.h" />
+    <ClInclude Include="IZBuffer.h" />
     <ClInclude Include="keycodes.h" />
     <ClInclude Include="line2d.h" />
     <ClInclude Include="line3d.h" />
@@ -205,6 +207,7 @@
     <ClInclude Include="plane3dex.h" />
     <ClInclude Include="position2d.h" />
     <ClInclude Include="rect.h" />
+    <ClInclude Include="S2DVertex.h" />
     <ClInclude Include="S3DVertex.h" />
     <ClInclude Include="slight.h" />
     <ClInclude Include="SMaterial.h" />
@@ -229,6 +232,7 @@
     <ClCompile Include="CSurfaceLoaderPSD.cpp" />
     <ClCompile Include="CSurfaceLoaderTGA.cpp" />
     <ClCompile Include="CVideoNull.cpp" />
+    <ClCompile Include="CZBuffer.cpp" />
     <ClCompile Include="CZipReader.cpp" />
     <ClCompile Include="os.cpp" />
   </ItemGroup>
