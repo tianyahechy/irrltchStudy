@@ -233,6 +233,7 @@
     <ClCompile Include="CSurfaceLoaderJPG.cpp" />
     <ClCompile Include="CSurfaceLoaderPSD.cpp" />
     <ClCompile Include="CSurfaceLoaderTGA.cpp" />
+    <ClCompile Include="CTRFlat.cpp" />
     <ClCompile Include="CTRTextureGouraud.cpp" />
     <ClCompile Include="CVideoNull.cpp" />
     <ClCompile Include="CZBuffer.cpp" />
