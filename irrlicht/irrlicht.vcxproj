@@ -163,6 +163,7 @@
     <ClInclude Include="CSurfaceLoaderJPG.h" />
     <ClInclude Include="CSurfaceLoaderPSD.h" />
     <ClInclude Include="CSurfaceLoaderTGA.h" />
+    <ClInclude Include="CTRTextureGouraud.h" />
     <ClInclude Include="CVideoNull.h" />
     <ClInclude Include="CZBuffer.h" />
     <ClInclude Include="CZipReader.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="CSurfaceLoaderJPG.cpp" />
     <ClCompile Include="CSurfaceLoaderPSD.cpp" />
     <ClCompile Include="CSurfaceLoaderTGA.cpp" />
+    <ClCompile Include="CTRTextureGouraud.cpp" />
     <ClCompile Include="CVideoNull.cpp" />
     <ClCompile Include="CZBuffer.cpp" />
     <ClCompile Include="CZipReader.cpp" />

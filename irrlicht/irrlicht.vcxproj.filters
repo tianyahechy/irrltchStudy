@@ -261,6 +261,9 @@
     <ClInclude Include="IK3DtriangleRenderer.h">
       <Filter>video impl\Software</Filter>
     </ClInclude>
+    <ClInclude Include="CTRTextureGouraud.h">
+      <Filter>video impl\Software</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFileList.cpp">
@@ -312,6 +315,9 @@
       <Filter>video impl\Null</Filter>
     </ClCompile>
     <ClCompile Include="CZBuffer.cpp">
+      <Filter>video impl\Software</Filter>
+    </ClCompile>
+    <ClCompile Include="CTRTextureGouraud.cpp">
       <Filter>video impl\Software</Filter>
     </ClCompile>
   </ItemGroup>
