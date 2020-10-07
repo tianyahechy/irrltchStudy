@@ -178,6 +178,7 @@
     <ClInclude Include="IEventReceiver.h" />
     <ClInclude Include="IFileList.h" />
     <ClInclude Include="IFileSystem.h" />
+    <ClInclude Include="IK3DtriangleRenderer.h" />
     <ClInclude Include="ILightSceneNode.h" />
     <ClInclude Include="IMesh.h" />
     <ClInclude Include="ImeshBuffer.h" />

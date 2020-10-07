@@ -258,6 +258,9 @@
     <ClInclude Include="CZBuffer.h">
       <Filter>video impl\Software</Filter>
     </ClInclude>
+    <ClInclude Include="IK3DtriangleRenderer.h">
+      <Filter>video impl\Software</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFileList.cpp">
