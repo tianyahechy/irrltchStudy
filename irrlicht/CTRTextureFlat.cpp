@@ -24,7 +24,7 @@ namespace irr
 				u16* targetSurface;
 				s32 spanEnd;
 				f32 leftDeltaXF;
-				f32 rightDeltaaXF;
+				f32 rightDeltaXF;
 				s32 leftX, rightX;
 				f32 leftXF, rightXF;
 				s32 span;
@@ -124,7 +124,7 @@ namespace irr
 					if (longest < 0.0)
 					{
 						tmpDiv = 1.0f / (f32)(v2->Pos.Y - v1->Pos.Y);
-						rightDeltaaXF = (v2->Pos.X - v1->Pos.X) * tmpDiv;
+						rightDeltaXF = (v2->Pos.X - v1->Pos.X) * tmpDiv;
 						rightZStep = (s32)((v2->ZValue - v1->ZValue) * tmpDiv);
 						rightTXStep = (s32)((v2->TCoords.X - rightTX) * tmpDiv);
 						rightTYStep = (s32)((v2->TCoords.Y - rightTY) * tmpDiv);
@@ -139,7 +139,7 @@ namespace irr
 					else
 					{
 						tmpDiv = 1.0f / (f32)height;
-						rightDeltaaXF = (v3->Pos.X - v1->Pos.X) * tmpDiv;
+						rightDeltaXF = (v3->Pos.X - v1->Pos.X) * tmpDiv;
 						rightZStep = (s32)((v3->ZValue - v1->ZValue) * tmpDiv);
 						rightTXStep = (s32)((v3->TCoords.X - rightTX) * tmpDiv);
 						rightTYStep = (s32)((v3->TCoords.Y - rightTY) * tmpDiv);
@@ -169,7 +169,7 @@ namespace irr
 								span = _viewPortRect._upperLeftCorner._y;
 							}
 							leftXF += leftDeltaXF * leftX;
-							rightXF += rightDeltaaXF * leftX;
+							rightXF += rightDeltaXF * leftX;
 							targetSurface += _surfaceHeight * leftX;
 							zTarget += _surfaceWidth * leftX;
 							leftZValue += leftZStep * leftX;
@@ -233,7 +233,7 @@ namespace irr
 								}
 							}
 							leftXF += leftDeltaXF;
-							rightXF += rightDeltaaXF;
+							rightXF += rightDeltaXF;
 							++span;
 							targetSurface += _surfaceWidth;
 							zTarget += _surfaceWidth;
@@ -253,7 +253,7 @@ namespace irr
 						if (longest < 0.0f)
 						{
 							tmpDiv = 1.0f / (v3->Pos.Y - v2->Pos.Y);
-							rightDeltaaXF = (v3->Pos.X - v2->Pos.X) * tmpDiv;
+							rightDeltaXF = (v3->Pos.X - v2->Pos.X) * tmpDiv;
 							rightXF = (f32)v2->Pos.X;
 							rightZValue = v2->ZValue;
 							rightZStep = (s32)((v3->ZValue - v2->ZValue) * tmpDiv);
@@ -293,13 +293,9 @@ namespace irr
 {
 	namespace video
 	{
-		IK3DtriangleRenderer* createTriangleRendererFlat(IZBuffer* zBuffer)
+		IK3DtriangleRenderer* createTriangleRendererTextureFlat(IZBuffer* zBuffer)
 		{
-#ifdef _IRR_COMPILE_WITH_SOFTWARE_
 			return new CTRTextureFlat(zBuffer);
-#else
-			return 0;
-#endif
 		}
 	}
 }

@@ -335,5 +335,8 @@
     <ClCompile Include="CTRTextureFlat.cpp">
       <Filter>video impl\Software</Filter>
     </ClCompile>
+    <ClCompile Include="CTRTextureFlatWire.cpp">
+      <Filter>video impl\Software</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
