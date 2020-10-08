@@ -326,5 +326,8 @@
     <ClCompile Include="CTRFlatWire.cpp">
       <Filter>video impl\Software</Filter>
     </ClCompile>
+    <ClCompile Include="CTRGouraud.cpp">
+      <Filter>video impl\Software</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
