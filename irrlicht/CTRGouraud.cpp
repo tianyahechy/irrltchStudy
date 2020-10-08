@@ -307,7 +307,7 @@ namespace irr
 {
 	namespace video
 	{
-		IK3DtriangleRenderer* createTriangleRendererFlat(IZBuffer* zBuffer)
+		IK3DtriangleRenderer* createTriangleRendererGouraud(IZBuffer* zBuffer)
 		{
 #ifdef _IRR_COMPILE_WITH_SOFTWARE_
 			return new CTRGouraud(zBuffer);
