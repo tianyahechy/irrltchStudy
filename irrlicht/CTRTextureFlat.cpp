@@ -5,14 +5,15 @@ namespace irr
 {
 	namespace video
 	{
-		class CTRGouraudWire : public CTRTextureGouraud
+		class CTRTextureFlat : public CTRTextureGouraud
 		{
 		public:
-			CTRGouraudWire(IZBuffer* zbuffer)
+			CTRTextureFlat(IZBuffer* zbuffer)
 				: CTRTextureGouraud(zbuffer)
 			{
 
 			}
+
 
 			virtual void drawIndexedTriangleList(S2DVertex * vertices, s32 vertexCount, const u16 * indexList, s32 triangleCount)
 			{
@@ -27,15 +28,19 @@ namespace irr
 				s32 leftX, rightX;
 				f32 leftXF, rightXF;
 				s32 span;
-				s32 leftR, leftG, leftB, rightR, rightG, rightB;
-				s32 leftStepR, leftStepG, leftStepB, rightStepR, rightStepG, rightStepB;
-
+				u16* hSpanBegin, *hSpanEnd;
+				s32 leftTX, rightTX, leftTY, rightTY;
+				s32 leftTXStep, rightTXStep, leftTYStep, rightTYStep;
+				s32 spanTX, spanTY, spanTXStep, spanTYStep;
 				core::rectEx<s32> triangleRect;
+
 				s32 leftZValue, rightZValue;
 				s32 leftZStep, rightZStep;
-				TZBufferType* zTarget;
+				s32 spanZValue, spanZStep;
+				TZBufferType* zTarget, *spanZTarget;
 				_lockedSurface = (u16*)_renderTarget->getData();
 				_lockedZBuffer = _zbuffer->lock();
+				_lockedTexture = (u16*)_texture->getData();
 				for (s32 i = 0; i < triangleCount; i++)
 				{
 					v1 = &vertices[*indexList];
@@ -111,9 +116,8 @@ namespace irr
 					leftZValue = v1->ZValue;
 					rightZValue = v1->ZValue;
 
-					leftR = rightR = video::getRed(v1->Color) << 11;
-					leftG = rightG = video::getGreen(v1->Color) << 11;
-					leftB = rightB = video::getBlue(v1->Color) << 11;
+					leftTX = rightTX = v1->TCoords.X;
+					leftTY = rightTY = v1->TCoords.Y;
 
 					targetSurface = _lockedSurface + span * _surfaceWidth;
 					zTarget = _lockedZBuffer + span * _surfaceWidth;
@@ -122,16 +126,14 @@ namespace irr
 						tmpDiv = 1.0f / (f32)(v2->Pos.Y - v1->Pos.Y);
 						rightDeltaaXF = (v2->Pos.X - v1->Pos.X) * tmpDiv;
 						rightZStep = (s32)((v2->ZValue - v1->ZValue) * tmpDiv);
-						rightStepR = (s32)(((s32)(video::getRed(v2->Color) << 11) - rightR) * tmpDiv);
-						rightStepG = (s32)(((s32)(video::getGreen(v2->Color) << 11) - rightG) * tmpDiv);
-						rightStepB = (s32)(((s32)(video::getBlue(v2->Color) << 11) - rightB) * tmpDiv);
+						rightTXStep = (s32)((v2->TCoords.X - rightTX) * tmpDiv);
+						rightTYStep = (s32)((v2->TCoords.Y - rightTY) * tmpDiv);
 
 						tmpDiv = 1.0f / (f32)height;
 						leftDeltaXF = (v3->Pos.X - v1->Pos.X) * tmpDiv;
 						leftZStep = (s32)((v3->ZValue - v1->ZValue) * tmpDiv);
-						leftStepR = (s32)(((s32)(video::getRed(v3->Color) << 11) - leftR) * tmpDiv);
-						leftStepG = (s32)(((s32)(video::getGreen(v3->Color) << 11) - leftG) * tmpDiv);
-						leftStepB = (s32)(((s32)(video::getBlue(v3->Color) << 11) - leftB) * tmpDiv);
+						leftTXStep = (s32)((v3->TCoords.X - leftTX) * tmpDiv);
+						leftTYStep = (s32)((v3->TCoords.Y - leftTY) * tmpDiv);
 
 					}
 					else
@@ -139,16 +141,14 @@ namespace irr
 						tmpDiv = 1.0f / (f32)height;
 						rightDeltaaXF = (v3->Pos.X - v1->Pos.X) * tmpDiv;
 						rightZStep = (s32)((v3->ZValue - v1->ZValue) * tmpDiv);
-						rightStepR = (s32)(((s32)(video::getRed(v3->Color) << 11) - rightR) * tmpDiv);
-						rightStepG = (s32)(((s32)(video::getGreen(v3->Color) << 11) - rightG) * tmpDiv);
-						rightStepB = (s32)(((s32)(video::getBlue(v3->Color) << 11) - rightB) * tmpDiv);
+						rightTXStep = (s32)((v3->TCoords.X - rightTX) * tmpDiv);
+						rightTYStep = (s32)((v3->TCoords.Y - rightTY) * tmpDiv);
 
 						tmpDiv = 1.0f / (f32)(v2->Pos.Y - v1->Pos.Y);
 						leftDeltaXF = (v2->Pos.X - v1->Pos.X) * tmpDiv;
 						leftZStep = (s32)((v2->ZValue - v1->ZValue) * tmpDiv);
-						leftStepR = (s32)(((s32)(video::getRed(v2->Color) << 11) - leftR) * tmpDiv);
-						leftStepG = (s32)(((s32)(video::getGreen(v2->Color) << 11) - leftG) * tmpDiv);
-						leftStepB = (s32)(((s32)(video::getBlue(v2->Color) << 11) - leftB) * tmpDiv);
+						leftTXStep = (s32)((v2->TCoords.X - leftTX) * tmpDiv);
+						leftTYStep = (s32)((v2->TCoords.Y - leftTY) * tmpDiv);
 					}
 					for (s32 triangleHalf = 0; triangleHalf < 2; triangleHalf++)
 					{
@@ -170,39 +170,66 @@ namespace irr
 							}
 							leftXF += leftDeltaXF * leftX;
 							rightXF += rightDeltaaXF * leftX;
-							targetSurface += _surfaceWidth * leftX;
+							targetSurface += _surfaceHeight * leftX;
 							zTarget += _surfaceWidth * leftX;
 							leftZValue += leftZStep * leftX;
 							rightZValue += rightZStep * leftX;
 
-							leftR += leftStepR * leftX;
-							leftG += leftStepG * leftX;
-							leftB += leftStepB * leftX;
-							rightR += rightStepR * leftX;
-							rightG += rightStepG * leftX;
-							rightB += rightStepB * leftX;
+							leftTX += leftTXStep * leftX;
+							leftTY += leftTYStep * leftX;
+							rightTX += rightTXStep * leftX;
+							rightTY += rightTYStep * leftX;
 						}
 						while (span < spanEnd)
 						{
 							leftX = (s32)(leftXF);
 							rightX = (s32)(rightXF + 0.5f);
-							if (leftX >= _viewPortRect._upperLeftCorner._x && 
-								leftX <= _viewPortRect._lowerRightCorner._x)
+							if (leftX < _viewPortRect._upperLeftCorner._x)
 							{
-								if (leftZValue >* (zTarget+leftX))
-								{
-									*(zTarget + leftX) = leftZValue;
-									*(targetSurface + leftX) = video::RGB16(leftR >> 8, leftG >> 8, leftB >> 8);
-								}
+								leftX = _viewPortRect._upperLeftCorner._x ;
 							}
-
-							if (rightX >= _viewPortRect._upperLeftCorner._x &&
-								rightX <= _viewPortRect._lowerRightCorner._x)
-							{
-								if (rightZValue >* (zTarget + rightX))
+							else
+								if (leftX > _viewPortRect._lowerRightCorner._x)
 								{
-									*(zTarget + rightX) = rightZValue;
-									*(targetSurface + rightX) = video::RGB16(rightR, rightG, rightB);
+									leftX = _viewPortRect._lowerRightCorner._x ;
+								}
+
+							if (rightX < _viewPortRect._upperLeftCorner._x)
+							{
+								rightX = _viewPortRect._upperLeftCorner._x;
+							}
+							else if (rightX > _viewPortRect._lowerRightCorner._x)
+							{
+								rightX = _viewPortRect._lowerRightCorner._x ;
+							}
+							if (rightX - leftX != 0)
+							{
+								tmpDiv = 1.0f / (f32)(rightX - leftX);
+								spanZValue = leftZValue;
+								spanZStep = (s32)((rightZValue - leftZValue) * tmpDiv);
+
+								hSpanBegin = targetSurface + leftX;
+								spanZTarget = zTarget + leftX;
+								hSpanEnd = targetSurface + rightX;
+
+								spanTX = leftTX ;
+								spanTY = leftTY ;
+								spanTXStep = (s32)((rightTX - leftTX) * tmpDiv);
+								spanTYStep = (s32)((rightTY - leftTY) * tmpDiv);
+
+								while (hSpanBegin < hSpanEnd)
+								{
+									if (spanZValue > *spanZTarget)
+									{
+										*spanZTarget = spanZValue;
+										*hSpanBegin = _lockedTexture[((spanTY >> 8) & _textureYMask) * _lockedTextureWidth + ((spanTX >> 8) & _textureXMask)];
+									}
+									spanTX += spanTXStep;
+									spanTY += spanTYStep;
+
+									spanZValue += spanZStep;
+									++hSpanBegin;
+									++spanZTarget;
 								}
 							}
 							leftXF += leftDeltaXF;
@@ -213,12 +240,10 @@ namespace irr
 							leftZValue += leftZStep;
 							rightZValue += rightZStep;
 
-							leftR += leftStepR;
-							leftG += leftStepG;
-							leftB += leftStepB;
-							rightR += rightStepR;
-							rightG += rightStepG;
-							rightB += rightStepB;
+							leftTX += leftTXStep;
+							leftTY += leftTYStep;
+							rightTX += rightTXStep;
+							rightTY += rightTYStep;
 
 						}
 						if (triangleHalf > 0)
@@ -233,12 +258,10 @@ namespace irr
 							rightZValue = v2->ZValue;
 							rightZStep = (s32)((v3->ZValue - v2->ZValue) * tmpDiv);
 
-							rightR = video::getRed(v2->Color) << 11;
-							rightG = video::getGreen(v2->Color) << 11;
-							rightB = video::getBlue(v2->Color) << 11;
-							rightStepR = (s32)(((s32)(video::getRed(v3->Color) << 11) - rightR) * tmpDiv);
-							rightStepG = (s32)(((s32)(video::getGreen(v3->Color) << 11) - rightG) * tmpDiv);
-							rightStepB = (s32)(((s32)(video::getBlue(v3->Color) << 11) - rightB) * tmpDiv);
+							rightTX = v2->TCoords.X;
+							rightTY = v2->TCoords.Y;
+							rightTXStep = (s32)((v3->TCoords.X - rightTX) * tmpDiv);
+							rightTYStep = (s32)((v3->TCoords.Y - rightTY) * tmpDiv);
 
 
 						}
@@ -250,12 +273,10 @@ namespace irr
 							leftZValue = v2->ZValue;
 							leftZStep = (s32)((v3->ZValue - v2->ZValue) * tmpDiv);
 
-							leftR = video::getRed(v2->Color) << 11;
-							leftG = video::getGreen(v2->Color) << 11;
-							leftB = video::getBlue(v2->Color) << 11;
-							leftStepR = (s32)(((s32)(video::getRed(v3->Color) << 11) - leftR) * tmpDiv);
-							leftStepG = (s32)(((s32)(video::getGreen(v3->Color) << 11) - leftG) * tmpDiv);
-							leftStepB = (s32)(((s32)(video::getBlue(v3->Color) << 11) - leftB) * tmpDiv);
+							leftTX = v2->TCoords.X;
+							leftTY = v2->TCoords.Y;
+							leftTXStep = (s32)((v3->TCoords.X - leftTX) * tmpDiv);
+							leftTYStep = (s32)((v3->TCoords.Y - leftTY) * tmpDiv);
 
 						}
 						spanEnd = v3->Pos.Y;
@@ -272,10 +293,10 @@ namespace irr
 {
 	namespace video
 	{
-		IK3DtriangleRenderer* createTriangleRendererGouraudWire(IZBuffer* zBuffer)
+		IK3DtriangleRenderer* createTriangleRendererFlat(IZBuffer* zBuffer)
 		{
 #ifdef _IRR_COMPILE_WITH_SOFTWARE_
-			return new CTRGouraudWire(zBuffer);
+			return new CTRTextureFlat(zBuffer);
 #else
 			return 0;
 #endif

@@ -18,7 +18,7 @@ namespace irr
 			{
 				const S2DVertex* v1, *v2, *v3;
 				f32 tmpDiv;
-				f32 logest;
+				f32 longest;
 				s32 height;
 				u16* targetSurface;
 				s32 spanEnd;
@@ -106,7 +106,7 @@ namespace irr
 					{
 						continue;
 					}
-					logest = (v2->Pos.Y - v1->Pos.Y) / (f32)height * (v3->Pos.X - v1->Pos.X) + (v1->Pos.X - v2->Pos.X);
+					longest = (v2->Pos.Y - v1->Pos.Y) / (f32)height * (v3->Pos.X - v1->Pos.X) + (v1->Pos.X - v2->Pos.X);
 					spanEnd = v2->Pos.Y;
 					span = v1->Pos.Y;
 					leftXF = (f32)v1->Pos.X;
@@ -120,7 +120,7 @@ namespace irr
 
 					targetSurface = _lockedSurface + span * _surfaceWidth;
 					zTarget = _lockedZBuffer + span * _surfaceWidth;
-					if (logest < 0.0)
+					if (longest < 0.0)
 					{
 						tmpDiv = 1.0f / (f32)(v2->Pos.Y - v1->Pos.Y);
 						rightDeltaaXF = (v2->Pos.X - v1->Pos.X) * tmpDiv;
@@ -260,7 +260,7 @@ namespace irr
 						{
 							break;
 						}
-						if (logest < 0.0f)
+						if (longest < 0.0f)
 						{
 							tmpDiv = 1.0f / (v3->Pos.Y - v2->Pos.Y);
 							rightDeltaaXF = (v3->Pos.X - v2->Pos.X) * tmpDiv;
