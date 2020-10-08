@@ -236,6 +236,7 @@
     <ClCompile Include="CTRFlat.cpp" />
     <ClCompile Include="CTRFlatWire.cpp" />
     <ClCompile Include="CTRGouraud.cpp" />
+    <ClCompile Include="CTRGouraudWire.cpp" />
     <ClCompile Include="CTRTextureGouraud.cpp" />
     <ClCompile Include="CVideoNull.cpp" />
     <ClCompile Include="CZBuffer.cpp" />
