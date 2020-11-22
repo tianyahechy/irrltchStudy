@@ -165,6 +165,7 @@
     <ClInclude Include="CSurfaceLoaderTGA.h" />
     <ClInclude Include="CTRTextureGouraud.h" />
     <ClInclude Include="CVideoNull.h" />
+    <ClInclude Include="CVideoSoftware.h" />
     <ClInclude Include="CZBuffer.h" />
     <ClInclude Include="CZipReader.h" />
     <ClInclude Include="dimension2d.h" />
