@@ -52,7 +52,7 @@ namespace irr
 			ETriangleRenderer _currentRenderer;
 			IZBuffer* _zBuffer;
 			video::ITexture* _texture;
-			SMaterial _material
+			SMaterial _material;
 
 
 		};
