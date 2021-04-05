@@ -150,6 +150,7 @@
     <ClInclude Include="aabbox3d.h" />
     <ClInclude Include="array.h" />
     <ClInclude Include="CColorConverter.h" />
+    <ClInclude Include="CDirectx8Texture.h" />
     <ClInclude Include="CFileList.h" />
     <ClInclude Include="CFileSystem.h" />
     <ClInclude Include="CFPSCounter.h" />
